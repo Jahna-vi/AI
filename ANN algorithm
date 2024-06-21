@@ -1,0 +1,302 @@
+ What is an Artificial Neural Network?
+Artificial neural networks are one of the main tools used in machine learning. As the “neural” part of their name suggests, they are brain-inspired systems that are intended to replicate the way that we humans learn. Neural networks consist of input and output layers, as well as (in most cases) a hidden layer consisting of units that transform the input into something that the output layer can use. They are excellent tools for finding patterns that are far too complex or numerous for a human programmer to extract and teach the machine to recognize.
+
+While neural networks (also called “perceptrons”) have been around since the 1940s, it is only in the last several decades where they have become a major part of artificial intelligence. This is due to the arrival of a technique called “backpropagation,” which allows networks to adjust their hidden layers of neurons in situations where the outcome doesn’t match what the creator is hoping for — like a network designed to recognize dogs, which misidentifies a cat, for example.
+
+Another important advance has been the arrival of deep learning neural networks, in which different layers of a multilayer network extract different features until it can recognize what it is looking for.
+
+1.1: Basic Structure of ANNs
+The idea of ANNs is based on the belief that working of the human brain by making the right connections can be imitated using silicon and wires as living neurons and dendrites.
+
+The human brain is composed of 86 billion nerve cells called neurons. They are connected to other thousand cells by Axons. Stimuli from the external environment or inputs from sensory organs are accepted by dendrites. These inputs create electric impulses, which quickly travel through the neural network. A neuron can then send the message to another neuron to handle the issue or does not send it forward.
+
+
+ANNs are composed of multiple nodes, which imitate biological neurons of the human brain. The neurons are connected by links and they interact with each other. The nodes can take input data and perform simple operations on the data. The result of these operations is passed to other neurons. The output at each node is called its activation or node value.
+
+Each link is associated with weight. ANNs are capable of learning, which takes place by altering weight values. The following illustration shows a simple ANN –
+
+
+2. Types of Artificial Neural Networks
+There are two Artificial Neural Network topologies − FeedForward and Feedback.
+
+2.1: FeedForward ANN
+
+In this ANN, the information flow is unidirectional. A unit sends information to another unit from which it does not receive any information. There are no feedback loops. They are used in pattern generation/recognition/classification. They have fixed inputs and outputs.
+
+
+2.2: FeedBack ANN
+
+Here, feedback loops are allowed. They are used in content-addressable memories.
+
+
+3. Activation Functions and There Types?
+3.1: What is Activation Function?
+It’s just a thing function that you use to get the output of the node. It is also known as Transfer Function.
+
+Activation functions are really important for an Artificial Neural Network to learn and make sense of something reallocated and Non-linear complex functional mappings between the inputs and response variable. They introduce non-linear properties to our Network. Their main purpose is to convert an input signal of a node in an ANN to an output signal. That output signal now is used as an input in the next layer in the stack.
+
+Specifically in A-NN we do the sum of products of inputs(X) and their corresponding Weights (W) and apply an Activation function f(x) to it to get the output of that layer and feed it as an input to the next layer.
+
+3.2: Types of activation Functions?
+It is used to determine the output of neural network like yes or no. It maps the resulting values in between 0 to 1 or -1 to 1 etc. (depending upon the function).
+
+The Activation Functions can be based on 2 types-
+
+1. Linear Activation Function
+
+2. Non-linear Activation Functions
+
+Linear Activation Function
+
+As you can see the function is a line or linear. Therefore, the output of the functions will not be confined between any range.
+
+
+Fig: Linear Activation Function
+Equation: f(x) = x
+
+Range: (-infinity to infinity)
+
+It doesn’t help with the complexity of various parameters of usual data that is fed to the neural networks.
+
+Non-linear Activation Function
+The Nonlinear Activation Functions are the most used activation functions. Nonlinearity helps to makes the graph look something like this
+
+
+Fig: Non-linear Activation Function
+It makes it easy for the model to generalize or adapt to a variety of data and to differentiate between the outputs.
+
+The main terminologies needed to understand for nonlinear functions are:
+
+Derivative or Differential: Change in y-axis w.r.t. change in the x-axis. It is also known as a slope.
+
+Monotonic function: A function that is either entirely non-increasing or non-decreasing.
+
+The Nonlinear Activation Functions are mainly divided on based on range or curves-
+
+Different Types of Activation function in non-Linear
+
+1. Sigmoid Activation Function
+
+The Sigmoid Function curve looks like an S-shape.
+
+
+Sigmoid Function
+The main reason why we use the sigmoid function is that it exists between (0 to 1). Therefore, it is especially used for models where we have to predict the probability as an output. Since the probability of anything exists only between the range of 0 and 1, sigmoid is the right choice.
+
+The function is differentiable. That means, we can find the slope of the sigmoid curve at any two points.
+
+The function is monotonic but the function’s derivative is not.
+
+The logistic sigmoid function can cause a neural network to get stuck at the training time.
+
+The softmax function is a more generalized logistic activation function that is used for multiclass classification.
+
+2. Tanh Activation Function
+
+tanh is also like logistic sigmoid but better. The range of the tanh function is from (-1 to 1). tanh is also sigmoidal (s-shaped).
+
+
+tanh
+The advantage is that the negative inputs will be mapped strongly negative and the zero inputs will be mapped near zero in the tanh graph. The function is differentiable.
+
+The function is monotonic while its derivative is not monotonic.
+
+The tanh function is mainly used classification between two classes.
+
+Both tanh and logistic sigmoid activation functions are used in feed-forward nets.
+
+3. ReLU (Rectified Linear Unit) Activation Function
+
+The ReLU is the most used activation function in the world right now. Since it is used in almost all the convolutional neural networks or deep learning.
+
+
+Relu
+As you can see, the ReLU is half rectified (from bottom). f(z) is zero when z is less than zero and f(z) is equal to z when z is above or equal to zero.
+
+Range: [ 0 to infinity)
+
+The function and it is derivative both are monotonic.
+
+But the issue is that all the negative values become zero immediately which decreases the ability of the model to fit or train from the data properly. That means any negative input given to the ReLU activation function turns the value into zero immediately in the graph, which in turn affects the resulting graph by not mapping the negative values appropriately.
+
+4: How Backpropagation works?
+Let’s dive into the mathematics part and see the backpropagation working with feedforward and feed backward Neural Network in depth.
+
+Approach
+
+Step 1: Randomly initialize the Weights to a small number close to 0 (but not 0).
+
+Step 2: Input the first observation of your dataset in the input layer, each feature in one input node.
+
+Step 3: Forward-Propagation: from left to right, the neurons are activated in a way that the impact of each neuron’s activation is limited by the weights. Propagates the activations until getting the predicted result y.
+
+Step 4: Compare the predicted result to the actual result. Measure the generated error.
+
+Step 5: Back-Propagation: from left to right, the error is back-Propagated. Update the weights according to how much they are responsible for the error. The Learning rate decides how much we update the weights.
+
+Step 6: Repeat step 1 to step 5 and updates the weights after each observation.
+
+Step 7: When the whole training set passed through the ANN that makes an epoch. Redo more epoch.
+
+Architecture
+1. Build a Feed-Forward neural network with 2 hidden layers. All the layers will have 3 Neurons each.
+
+2. 1st and 2nd hidden layers will have RELU and sigmoid respectively as activation functions. The final layer will have a Softmax activation function.
+
+3. Error is calculated using cross-entropy.
+
+
+4. How Does Backpropagation work?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+So Weights are updated in each layer. Again forward pass then recalculates the errors with actual output and then backward pass repeat the step until error is reduced.
+
+So in these ways backpropagation algorithm work.
+
+Note: If you want this article check out my academia.edu profile.
+
+5. Practical Implementation of Artificial Neural Network?
+Churn Modelling Problem
+In this part, you will be solving a data analytics challenge for a bank. You will be given a dataset with a large sample of the bank’s customers. To make this dataset, the bank gathered information such as customer id, credit score, gender, age, tenure, balance, if the customer is active, has a credit card, etc. During 6 months, the bank observed if these customers left or stayed in the bank.
+
+Your goal is to make an Artificial Neural Network that can predict, based on geo-demographical and transactional information given above, if any individual customer will leave the bank or stay (customer churn). Besides, you are asked to rank all the customers of the bank, based on their probability of leaving. To do that, you will need to use the right Deep Learning model, one that is based on a probabilistic approach.
+
+If you succeed in this project, you will create significant added value to the bank. By applying your Deep Learning model the bank may significantly reduce customer churn.
+
+Dataset sample:
+
+
+Part 1: Data Preprocessing
+
+1.1 Import the Libraries
+
+In this step, we import three Libraries in Data Preprocessing part. A library is a tool that you can use to make a specific job. First of all, we import the numpy library used for multidimensional array then import the pandas library used to import the dataset and in last we import matplotlib library used for plotting the graph.
+
+
+1.2 Import the dataset
+
+In this step, we import the dataset to do that we use the pandas library. After import our dataset we define our dependent and independent variable. Our independent variables are 1 to 12 attributes as you can see in the sample dataset which we call ‘X’ and dependent is our last attribute which we call ‘y’ here.
+
+
+1.3 Encoding the Categorical data
+
+In this step, we Encode our categorical data. If we see our dataset then Geography & Gender attribute is in Text and we Encode these two attributes in this part use the LabelEncoder and OneHOTEncoder from the Sklearn.processing library.
+
+
+1.4 Split the dataset for test and train
+
+In this step, we split our dataset into a test set and train set and an 80% dataset split for training and the remaining 20% for tests. Our dataset contains 10000 instances so 8000 data we train and 2000 for the test.
+
+
+1.5 Feature Scaling
+
+Feature Scaling is the most important part of data preprocessing. If we see our dataset then some attribute contains information in Numeric value some value very high and some are very low if we see the age and estimated salary. This will cause some issues in our machinery model to solve that problem we set all values on the same scale there are two methods to solve that problem first one is Normalize and Second is Standard Scaler.
+
+
+Here we use standard Scaler import from Sklearn Library.
+
+
+Part 2: Building our Model
+
+In this part, we model our Artificial Neural Network model.
+
+2.1 Import the Libraries
+
+In this step, we import the Library which will build our ANN model. We import Keras Library which will build a deep neural network based on Tensorflow because we use Tensorflow backhand. Here we import the two modules from Keras. The first one is Sequential used for initializing our ANN model and the second is Dense used for adding different layers of ANN.
+
+
+2.2 Initialize our ANN model
+
+In this step, we initialize our Artificial Neural Network model to do that we use sequential modules.
+
+
+2.3 Adding the input layer and first hidden layer
+
+In this step, we use the Dense model to add a different layer. The parameter which we pass here first is output_dim=6 which defines hidden layer=6, the second parameter is init= uniform basically this is a uniform function that randomly initializes the weights which are close to 0 but not 0. The third parameter is activation= relu here in the first hidden layer we use relu activation. And the last parameter which we pass in dense function is input_dim= 11 which means the input node of our Neural Network is 11 because our dataset has 11 attributes that’s why we choose 11 input nodes.
+
+
+2.4 Adding the Second Hidden layer
+
+In this step, we add another hidden layer
+
+
+2.5 Adding the output layer
+
+In this step, we add an output layer in our ANN structure output_dim= 1 which means one output node here we use the sigmoid function because our target attribute has a binary class which is one or zero that’s why we use sigmoid activation function.
+
+2.6 Compiling the ANN
+
+In this step, we compile the ANN to do that we use the compile method and add several parameters the first parameter is optimizer = Adam here use the optimal number of weights. So for choosing the optimal number of weights, there are various algorithms of Stochastic Gradient Descent but very efficient one which is Adam so that’s why we use Adam optimizer here. The second parameter is loss this corresponds to loss function here we use binary_crossentropy because if we see target attribute our dataset which contains the binary value that’s why we choose the binary cross-entropy. The final parameter is metrics basically It’s a list of metrics to be evaluated by the model and here we choose the accuracy metrics.
+
+
+2.7 Fitting the ANN
+
+In this step we fit the training data our model X_train, y_train is our training data. Here a batch size is basically a number of observations after which you want to update the weights here we take batch size 10. And the final parameter is epoch is basically when whole the training set passed through the ANN here we choose the 100 number of the epoch.
+
+
+
+
+
+
+
+
+Part 3: Making the Prediction and Accuracy Result.
+
+3.1 Predict the test set Result
+
+In this step, we predict our test set result here our prediction results in probability so we choose 1(customer leave the bank) if the probability is greater than one 0.5 otherwise 0(customer don’t leave the bank).
+
+
+3.2 Confusion metrics
+
+In this step we make a confusion metric of our test set result to do that we import confusion matrix from sklearn.metrics then in confusion matrix, we pass two parameters first is y_test which is the actual test set result and second is y_pred which predicted the result.
+
+
+3.3 Accuracy Score
+
+In this step, we calculate the accuracy score based on the actual test result and predict test results.
+
+
+So here we go we get 84.05% of our ANN model.
+
+If you want dataset and code you also check my Github Profile.
+
+
+
